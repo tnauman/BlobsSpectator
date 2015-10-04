@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "Blobs Spectator",
+  "version": "0.1.3",
+  "description": "Enables the Spectate button in the blobs.co.il website.",
+  "icons": {
+    "16": "images/icon-19.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-48.png"
+    },
+    "default_title": "Blobs Spectator Enabled"
+  },
+  "author": "Tamir Nauman",
+  "background": {
+    "scripts": [
+      "eventPage.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://blobs.co.il/",
+        "https://blobs.co.il/"
+      ],
+      "js": [
+        "content.js",
+        "scripts/jquery-2.1.4.min.js"
+      ]
+    }
+  ],
+  "minimum_chrome_version": "38",
+  "permissions": [
+    "http://blobs.co.il/",
+    "https://blobs.co.il/",
+    "declarativeContent"
+  ],
+  "short_name": "BlobsSpect",
+  "web_accessible_resources": [
+    "icon-48.png"
+  ]
+}
